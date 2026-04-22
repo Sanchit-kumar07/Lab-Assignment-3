@@ -1,0 +1,114 @@
+.stats-container {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 1.75rem;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stats-container h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.875rem;
+}
+
+.stat-card {
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: rgba(15, 23, 42, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-pass .stat-value {
+  color: var(--success);
+}
+
+.stat-fail .stat-value {
+  color: var(--danger);
+}
+
+.stat-avg .stat-value {
+  color: #38bdf8;
+}
+
+.stat-high .stat-value {
+  color: #a78bfa;
+}
+
+/* Pass Rate Bar */
+.pass-bar-container {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--surface-border);
+}
+
+.pass-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  color: var(--text-secondary);
+}
+
+.pass-rate-value {
+  color: var(--success);
+}
+
+.pass-bar-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(244, 63, 94, 0.15);
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.pass-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--success), #34d399);
+  border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
